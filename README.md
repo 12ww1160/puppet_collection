@@ -14,6 +14,7 @@
     - [confdroid\_gitea](#confdroid_gitea)
     - [confdroid\_php](#confdroid_php)
     - [confdroid\_nrpe](#confdroid_nrpe)
+    - [control repo template](#control-repo-template)
   - [FAQ](#faq)
 
 ## Summary
@@ -86,7 +87,7 @@ Install and configure PHP to allow multiple applications with different settings
 
 - install php
 - manage required directories including selinux contexts and permissions
-- manage reuired files including selinux contexts and permissions
+- manage required files including selinux contexts and permissions
 
 ### [confdroid_nrpe](https://3for.me/77w07)
 
@@ -102,6 +103,12 @@ Install NRPE as client for Nagios to query the status of hosts and their service
 - manage iptables (optional)
 - manage selinux rule exceptions (optional)
 - manage NRPE service
+
+### [control repo template](https://3for.me/nq00s)
+
+A template for starting a r10k control repo in a new puppet infrastructure
+
+---
 
 ## FAQ
 
