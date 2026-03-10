@@ -14,6 +14,7 @@
     - [confdroid\_gitea](#confdroid_gitea)
     - [confdroid\_php](#confdroid_php)
     - [confdroid\_nrpe](#confdroid_nrpe)
+    - [confdroid\_nagios](#confdroid_nagios)
     - [control repo template](#control-repo-template)
   - [FAQ](#faq)
 
@@ -65,7 +66,7 @@ Automate installation, configuration and management of all aspects of PostgreSQL
 
 ### [confdroid_apache](https://3for.me/kdo6j)
 
-Install and configure a standalone empty Apache (httpd) server. The module is mainly to be used by other modules to add websites or services on top, i.e. Nagios, Wordpress etd. 
+Install and configure a standalone empty Apache (httpd) server. The module is mainly to be used by other modules to add websites or services on top, i.e. Nagios, Wordpress etd.
 
 - install the packages
 - manage main files and directories
@@ -77,7 +78,7 @@ Install and configure a standalone empty Apache (httpd) server. The module is ma
 Install and configure a gitea standalone instance from non-packaged binaries.
 
 - install binary
-- manage main files and directories 
+- manage main files and directories
 - manage service file and status
 - manage the firewall port
 
@@ -91,7 +92,7 @@ Install and configure PHP to allow multiple applications with different settings
 
 ### [confdroid_nrpe](https://3for.me/77w07)
 
-Install NRPE as client for Nagios to query the status of hosts and their services. 
+Install NRPE as client for Nagios to query the status of hosts and their services.
 
 - manage NRPE service user properties
 - manage directory structure (file system permissions, selinux context) through parameters
@@ -103,6 +104,18 @@ Install NRPE as client for Nagios to query the status of hosts and their service
 - manage iptables (optional)
 - manage selinux rule exceptions (optional)
 - manage NRPE service
+
+### [confdroid_nagios](https://3for.me/bh1d2)
+
+Install, configure and fully populate Nagios via Exports in PuppetDB
+
+- manage configuration files through parameters:
+  - nagios.cfg
+  - cfi.cfg
+- manage iptables (optional)
+- manage service
+- export client targets (hosts, services)
+- import resources in nagios (hosts, services, commands, contacts etc.)
 
 ### [control repo template](https://3for.me/nq00s)
 
