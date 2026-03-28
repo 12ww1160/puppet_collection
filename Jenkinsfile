@@ -104,7 +104,7 @@ pipeline {
 
          stage('Mirror to Github - 12ww1160') {
              steps {
-              sshagent(['key-github-12ww1160-not-grizzly']) {
+              sshagent(['jenkins (key-github-12ww160-not-grizzly)']) {
                 sh '''
                   git remote set-url --push master git@github.com:12ww1160/puppet_collection.git
                   git push master --mirror
