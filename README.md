@@ -17,6 +17,7 @@
     - [confdroid\_nagios](#confdroid_nagios)
     - [confdroid\_fail2ban](#confdroid_fail2ban)
     - [control repo template](#control-repo-template)
+    - [confdroid\_automatic](#confdroid_automatic)
   - [FAQ](#faq)
 
 ## Summary
@@ -128,11 +129,20 @@ Install, configure and manage fail2ban to protect hosts and services against bru
   - fail2ban.local (overrides default settings in fail2ban.conf)
   - jail.conf
   - jail.local (overrides default settings in jail.conf)
-- manage service status
+- manage service
 
 ### [control repo template](https://3for.me/nq00s)
 
 A template for starting a r10k control repo in a new puppet infrastructure
+
+### [confdroid_automatic](https://3for.me/wglig)
+
+Install, configure and manage automatic OS system updates on RHEL-9 like operating systems using DNF. 
+
+- install required binaries,
+- manage files and directories with proper selinux context
+- manage main configurations files via parameters
+- manage service
 
 ---
 
