@@ -137,7 +137,7 @@ A template for starting a r10k control repo in a new puppet infrastructure
 
 ### [confdroid_automatic](https://3for.me/wglig)
 
-Install, configure and manage automatic OS system updates on RHEL-9 like operating systems using DNF. 
+Install, configure and manage automatic OS system updates on RHEL-9 like operating systems using DNF.
 
 - install required binaries,
 - manage files and directories with proper selinux context
@@ -150,3 +150,5 @@ Install, configure and manage automatic OS system updates on RHEL-9 like operati
 
 - Q: "Why are the names of the modules using underscore instead of hyphens?"
   A: The modules are best deployed through the [R10k](https://github.com/puppetlabs/r10k) service using a Puppetfile. The deployment process using Puppetfile would convert the name of say "confdroid-postgresql" into a module called "confdroid" locally on the puppet server, cutting off everything after the hyphen. It also would then not deploy more than one module, because they all would be called "confdroid"
+- Q: "why is always only Rocky 9 listed as supported OS"?
+  A: In fact **any** RHEL-9 based OS should work. But  all modules are thoroughly being tested under Rocky 9 as OS of choice.
