@@ -18,6 +18,8 @@
     - [confdroid\_fail2ban](#confdroid_fail2ban)
     - [control repo template](#control-repo-template)
     - [confdroid\_automatic](#confdroid_automatic)
+    - [confdroid\_selinux](#confdroid_selinux)
+    - [confdroid\_ssh](#confdroid_ssh)
   - [FAQ](#faq)
 
 ## Summary
@@ -143,6 +145,22 @@ Install, configure and manage automatic OS system updates on RHEL-9 like operati
 - manage files and directories with proper selinux context
 - manage main configurations files via parameters
 - manage service
+
+### [confdroid_selinux](https://3for.me/z2tsi)
+
+- Install binaries required for selinux and related tools
+- manage /etc/sysconfig/selinux file (file system permissions, selinux context, content)
+- manage current selinux status (permissive,enforcing)
+
+### [confdroid_ssh](https://3for.me/jhjim)
+
+Install, configure and manage SSHD and ssh settings
+
+- install required binaries
+- manage local custom configuration based on parameters, overriding the defaults
+- manage selinux rules
+- manage service
+- (optional) manage firewall
 
 ---
 
