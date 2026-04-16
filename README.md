@@ -20,6 +20,7 @@
     - [confdroid\_automatic](#confdroid_automatic)
     - [confdroid\_selinux](#confdroid_selinux)
     - [confdroid\_ssh](#confdroid_ssh)
+    - [confdroid\_java](#confdroid_java)
   - [FAQ](#faq)
 
 ## Summary
@@ -161,6 +162,10 @@ Install, configure and manage SSHD and ssh settings
 - manage selinux rules
 - manage service
 - (optional) manage firewall
+
+### [confdroid_java](https://3for.me/erwc5)
+
+Install java binaries for usage with other modules, i.e. confdroid_jenkins, as specified in parameters.
 
 ---
 
