@@ -66,6 +66,28 @@ pipeline {
       }
     }
 
+         stage('Mirror to Github - Grizzlycoda') {
+             steps {
+              sshagent(['edd05eb6-26b5-4c7b-a5cc-ea2ab899f4fa']) {
+                sh '''
+                  git remote set-url --push master git@github.com:grizzlycoda/puppet_collection.git
+                  git push master --mirror
+                '''
+        }
+      }
+	  }
+
+         stage('Mirror to Github - 12ww1160') {
+             steps {
+              sshagent(['key-github-12ww160-not-grizzly']) {
+                sh '''
+                  git remote set-url --push master git@github.com:12ww1160/puppet_collection.git
+                  git push master --mirror
+                '''
+        }
+      }
+	  }
+
       stage('Mirror to Gitea') {
         steps {
           sshagent(['edd05eb6-26b5-4c7b-a5cc-ea2ab899f4fa']) {
@@ -92,30 +114,5 @@ pipeline {
         }
       }
     }
-
-         stage('Mirror to Github - Grizzlycoda') {
-             steps {
-              sshagent(['edd05eb6-26b5-4c7b-a5cc-ea2ab899f4fa']) {
-                sh '''
-                  git pull
-                  git remote set-url --push master git@github.com:grizzlycoda/puppet_collection.git
-                  git push master --mirror
-                '''
-        }
-      }
-	  }
-
-         stage('Mirror to Github - 12ww1160') {
-             steps {
-              sshagent(['key-github-12ww160-not-grizzly']) {
-                sh '''
-                  git checkout master
-                  git pull origin master
-                  git remote set-url --push master git@github.com:12ww1160/puppet_collection.git
-                  git push master --mirror
-                '''
-        }
-      }
-	  }
   }
 }
