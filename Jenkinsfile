@@ -97,6 +97,8 @@ pipeline {
              steps {
               sshagent(['edd05eb6-26b5-4c7b-a5cc-ea2ab899f4fa']) {
                 sh '''
+                  git checkout master
+                  git pull origin master
                   git remote set-url --push master git@github.com:grizzlycoda/puppet_collection.git
                   git push master --mirror
                 '''
@@ -108,6 +110,8 @@ pipeline {
              steps {
               sshagent(['key-github-12ww160-not-grizzly']) {
                 sh '''
+                  git checkout master
+                  git pull origin master
                   git remote set-url --push master git@github.com:12ww1160/puppet_collection.git
                   git push master --mirror
                 '''
