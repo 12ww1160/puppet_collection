@@ -21,6 +21,7 @@
     - [confdroid\_selinux](#confdroid_selinux)
     - [confdroid\_ssh](#confdroid_ssh)
     - [confdroid\_java](#confdroid_java)
+    - [confdroid\_alloy](#confdroid_alloy)
   - [FAQ](#faq)
 
 ## Summary
@@ -166,6 +167,16 @@ Install, configure and manage SSHD and ssh settings
 ### [confdroid_java](https://3for.me/erwc5)
 
 Install java binaries for usage with other modules, i.e. confdroid_jenkins, as specified in parameters.
+
+### [confdroid_alloy](https://3for.me/dcckx)
+
+- install alloy binaries
+- install node exporter (optional, set `ay_manage_ne`to `true`)
+
+- manage alloy directories and files including templates
+- manage the main alloy pipeline for loki and prometheus
+- manage log rotation for rsyslog to allow adm membership
+- manage alloy service
 
 ---
 
