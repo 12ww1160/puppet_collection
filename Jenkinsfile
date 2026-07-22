@@ -66,30 +66,32 @@ pipeline {
       }
     }
 
-         stage('Mirror to Gitea') {
-             steps {
-                withCredentials([usernamePassword(
-                credentialsId: 'Jenkins-gitea',
-                usernameVariable: 'GITEA_USER',
-                passwordVariable: 'GITEA_TOKEN')]) {
-                script {
-                    // Checkout from GitLab (already done implicitly)
-                    sh '''
-                        git checkout master
-                        git pull origin master
-                        git branch -D development
-                        git branch -D jenkins-build-$BUILD_NUMBER
-                        git rm -f Jenkinsfile
-                        git rm -r --cached .vscode || echo "No .vscode to remove from git"
-                        git commit --amend --no-edit --allow-empty
-                        git remote add master https://sourcecode.confdroid.com/confdroid/puppet_collection.git
-                        git -c credential.helper="!f() { echo username=${GITEA_USER}; echo password=${GITEA_TOKEN}; }; f" \
-                        push master --mirror
-                    '''
-					}
-				}
-			}
-		}
+      stage('Mirror to Gitea') {
+        steps {
+          sshagent(['edd05eb6-26b5-4c7b-a5cc-ea2ab899f4fa']) {
+            withCredentials([usernamePassword(
+              credentialsId: 'Jenkins-gitea',
+              usernameVariable: 'GITEA_USER',
+              passwordVariable: 'GITEA_TOKEN')]) {
+              script {
+                // Checkout from GitLab (already done implicitly)
+                  sh '''
+                    git checkout master
+                    git pull origin master
+                    git branch -D development
+                    git branch -D jenkins-build-$BUILD_NUMBER
+                    git rm -f Jenkinsfile
+                    git rm -r --cached .vscode || echo "No .vscode to remove from git"
+                    git commit --amend --no-edit --allow-empty
+                    git remote add master https://sourcecode.confdroid.com/confdroid/puppet_collection.git
+                    git -c credential.helper="!f() { echo username=${GITEA_USER}; echo password=${GITEA_TOKEN}; }; f" \
+                    push master --mirror
+                  '''
+            }
+          }
+        }
+      }
+    }
 
          stage('Mirror to Github - Grizzlycoda') {
              steps {
