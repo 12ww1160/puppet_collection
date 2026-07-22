@@ -95,7 +95,7 @@ pipeline {
 
          stage('Mirror to Github - Grizzlycoda') {
              steps {
-              sshagent(['edd05eb6-26b5-4c7b-a5cc-ea2ab899f4fa']) {
+              sshagent(['key-github-grizzlycoda']) {
                 sh '''
                   git remote add github-grizzly git@github.com:grizzlycoda/puppet_collection.git
                   git push github-grizzly --mirror
