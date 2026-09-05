@@ -22,6 +22,7 @@
     - [confdroid\_ssh](#confdroid_ssh)
     - [confdroid\_java](#confdroid_java)
     - [confdroid\_alloy](#confdroid_alloy)
+    - [confdroid\_haproxy](#confdroid_haproxy)
   - [FAQ](#faq)
 
 ## Summary
@@ -177,6 +178,22 @@ Install java binaries for usage with other modules, i.e. confdroid_jenkins, as s
 - manage the main alloy pipeline for loki and prometheus
 - manage log rotation for rsyslog to allow adm membership
 - manage alloy service
+
+### [confdroid_haproxy](https://3for.me/rovxr)
+
+install, configure and manage haproxy service configure proxies via define access
+
+- install rpm binaries
+- manage haproxy user
+- manage directories (file system permissions, selinux context)
+- manage files (file system permissions, content, selinux context)
+- manage proxy instances through a define
+- front-end options
+- back-end options
+- ACL options
+- adds haproxy logs to rsyslog for remote logging where used
+- manage fail2ban integration (optional, requires confdroid_fail2ban module)
+- manage haproxy service and stats service
 
 ---
 
