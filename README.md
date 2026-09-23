@@ -23,6 +23,7 @@
     - [confdroid\_java](#confdroid_java)
     - [confdroid\_alloy](#confdroid_alloy)
     - [confdroid\_haproxy](#confdroid_haproxy)
+    - [confdroid\_clamav](#confdroid_clamav)
   - [FAQ](#faq)
 
 ## Summary
@@ -173,7 +174,6 @@ Install java binaries for usage with other modules, i.e. confdroid_jenkins, as s
 
 - install alloy binaries
 - install node exporter (optional, set `ay_manage_ne`to `true`)
-
 - manage alloy directories and files including templates
 - manage the main alloy pipeline for loki and prometheus
 - manage log rotation for rsyslog to allow adm membership
@@ -194,6 +194,17 @@ install, configure and manage haproxy service configure proxies via define acces
 - adds haproxy logs to rsyslog for remote logging where used
 - manage fail2ban integration (optional, requires confdroid_fail2ban module)
 - manage haproxy service and stats service
+
+### [confdroid_clamav](https://3for.me/xkozd)
+
+install, configure and manage clamav / clamd
+
+- install all required binaries including s-nail as mail program to send alerts when infected files are found
+- manage required config files
+- manage cronjob settings via parameters
+- run cron job to scan the file system (by default starting at root, configurable) via clamdscan
+- set ConcurrentDatabaseReload option `yes`/`no` to optimize RAM consumption. defaults to `no`
+- manage `freshclam` and `clamd` services
 
 ---
 
